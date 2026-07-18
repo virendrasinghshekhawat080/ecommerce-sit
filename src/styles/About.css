@@ -1,0 +1,324 @@
+.about-page {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+
+
+/* Hero */
+
+.about-hero {
+
+    height: 450px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-align: center;
+
+}
+
+
+
+.hero-content h1 {
+
+    font-size: 45px;
+    margin-bottom: 15px;
+
+}
+
+
+.hero-content p {
+
+    font-size: 20px;
+    max-width: 600px;
+
+}
+
+
+
+.hero-content button {
+
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+
+    background: #ff9900;
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+
+
+
+/* Story */
+
+
+.about-story {
+
+    display: flex;
+    gap: 40px;
+
+    padding: 60px 8%;
+
+    background: white;
+
+    align-items: center;
+
+}
+
+
+
+.about-story div {
+
+    flex: 1;
+
+}
+
+
+
+.about-story h2 {
+
+    font-size: 32px;
+
+}
+
+
+
+.story-image img {
+
+    width: 100%;
+    border-radius: 15px;
+
+}
+
+
+
+
+
+/* Features */
+
+
+.choose-section {
+
+    padding: 60px 8%;
+    text-align: center;
+
+}
+
+
+
+.feature-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+.feature-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.feature-card:hover {
+
+    transform: translateY(-5px);
+
+    transition: .3s;
+
+}
+
+
+
+
+
+/* Stats */
+
+
+.stats {
+
+    background: #131921;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    padding: 40px 8%;
+
+    text-align: center;
+
+}
+
+
+
+.stats h2 {
+
+    color: #ff9900;
+
+    font-size: 35px;
+
+}
+
+
+
+
+
+/* Categories */
+
+
+.categories {
+
+    padding: 60px 8%;
+
+    text-align: center;
+
+}
+
+
+
+.category-box {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+.category-box div {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    font-size: 35px;
+
+}
+
+
+
+
+/* Contact */
+
+
+.contact {
+
+    background: white;
+
+    padding: 60px;
+
+    text-align: center;
+
+}
+
+
+
+.contact button {
+
+    background: #ff9900;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 30px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px) {
+
+
+    .feature-container,
+    .stats,
+    .category-box {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+
+    .about-story {
+
+        flex-direction: column;
+
+    }
+
+
+
+}
+
+
+
+@media(max-width:500px) {
+
+
+    .feature-container,
+    .stats,
+    .category-box {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 30px;
+
+    }
+
+
+}
