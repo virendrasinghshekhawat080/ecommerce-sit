@@ -1,6 +1,10 @@
 
 import React from "react";
-import "../styles/About.css";
+import "./styles/AboutN.css";
+
+
+
+
 
 function About() {
 
