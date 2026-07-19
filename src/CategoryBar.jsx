@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import "./CategoryBar.css";
+import "./categoryBar.css";
 
 function CategoryBar() {
 

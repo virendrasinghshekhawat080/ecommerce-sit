@@ -1,7 +1,8 @@
 
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./styles/navbar.css";
+
+import "./navbar.css";
 
 
 function Navbar() {
