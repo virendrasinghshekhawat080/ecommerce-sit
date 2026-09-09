@@ -1,194 +1,11 @@
-.navbar {
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 15px 40px;
-
-    background: #131921;
-
-    color: white;
-
-    gap: 30px;
-
-}
-
-
-/* Logo */
-
-.navbar h2 {
-
-    margin: 0;
-
-    font-size: 24px;
-
-    white-space: nowrap;
-
-}
-
-
-
-/* Search Section */
-
-.search-box {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    flex: 1;
-
-    max-width: 500px;
-
-}
-
-
-.search-box input {
-
-    width: 100%;
-
-    padding: 12px;
-
-    border-radius: 5px 0 0 5px;
-
-    border: none;
-
-    outline: none;
-
-    font-size: 15px;
-
-}
-
-
-.search-box button {
-
-    padding: 12px 20px;
-
-    border: none;
-
-    background: #ff9900;
-
-    cursor: pointer;
-
-    border-radius: 0 5px 5px 0;
-
-}
-
-
-
-/* Navigation Links */
-
-.nav-links {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-    white-space: nowrap;
-
-}
-
-
-
-.nav-links a {
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 17px;
-
-    font-weight: 500;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-
-    transition: 0.3s;
-
-}
-
-
-
-.nav-links a:hover {
-
-    background: #ff9900;
-
-    color: black;
-
-}
-
-
-
-/* Active Link */
-
-.nav-links a.active {
-
-    background: #ff9900;
-
-    color: black;
-
-}
-
-
-
-/* Search Suggestions */
-
-.suggestions {
-
-    position: absolute;
-
-    top: 45px;
-
-    left: 0;
-
-    width: 100%;
-
-    background: white;
-
-    border: 1px solid #ddd;
-
-    z-index: 1000;
-
-}
-
-
-
-.suggestions p {
-
-    color: black;
-
-    padding: 10px;
-
-    margin: 0;
-
-    cursor: pointer;
-
-}
-
-
-
-.suggestions p:hover {
-
-    background: #eee;
-
-}
 /* =========================
-   NAVBAR MAIN
+   NAVBAR
 ========================= */
 
 .navbar {
     width: 100%;
-    min-height: 72px;
-
-    padding: 12px 5%;
+    min-height: 75px;
 
     display: flex;
     align-items: center;
@@ -196,18 +13,18 @@
 
     gap: 25px;
 
+    padding: 12px 5%;
+
     background: #ffffff;
 
     border-bottom: 1px solid #e5e7eb;
 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
 
     position: sticky;
     top: 0;
 
     z-index: 1000;
-
-    box-sizing: border-box;
 }
 
 
@@ -218,7 +35,7 @@
 .navbar h2 {
     margin: 0;
 
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 700;
 
     color: #111827;
@@ -230,13 +47,13 @@
 
 
 /* =========================
-   SEARCH BOX
+   SEARCH
 ========================= */
 
 .search-box {
     flex: 1;
 
-    max-width: 500px;
+    max-width: 520px;
 
     display: flex;
 
@@ -244,26 +61,22 @@
 }
 
 
-/* Search Input */
-
 .search-box input {
     width: 100%;
+    min-width: 0;
 
-    height: 44px;
+    height: 45px;
 
     padding: 0 15px;
 
-    font-size: 14px;
-
     border: 1px solid #d1d5db;
-
     border-right: none;
 
     border-radius: 8px 0 0 8px;
 
     outline: none;
 
-    transition: 0.3s;
+    font-size: 14px;
 
     box-sizing: border-box;
 }
@@ -274,14 +87,14 @@
 }
 
 
-/* Search Button */
-
 .search-box button {
-    height: 44px;
+    height: 45px;
 
-    padding: 0 18px;
+    padding: 0 20px;
 
     border: none;
+
+    border-radius: 0 8px 8px 0;
 
     background: #2563eb;
 
@@ -290,11 +103,7 @@
     font-size: 14px;
     font-weight: 600;
 
-    border-radius: 0 8px 8px 0;
-
     cursor: pointer;
-
-    transition: 0.3s;
 
     white-space: nowrap;
 }
@@ -306,7 +115,7 @@
 
 
 /* =========================
-   SEARCH SUGGESTIONS
+   SUGGESTIONS
 ========================= */
 
 .suggestions {
@@ -315,7 +124,7 @@
     top: 48px;
     left: 0;
 
-    width: calc(100% - 85px);
+    width: 100%;
 
     background: white;
 
@@ -323,33 +132,26 @@
 
     border-radius: 8px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
     z-index: 2000;
+
+    overflow: hidden;
 }
 
 
 .suggestions p {
     margin: 0;
 
-    padding: 11px 15px;
+    padding: 11px 14px;
 
     font-size: 14px;
 
-    color: #374151;
-
     cursor: pointer;
 
+    color: #374151;
+
     border-bottom: 1px solid #f3f4f6;
-
-    transition: 0.2s;
-}
-
-
-.suggestions p:last-child {
-    border-bottom: none;
 }
 
 
@@ -361,7 +163,7 @@
 
 
 /* =========================
-   NAVIGATION LINKS
+   NAV LINKS
 ========================= */
 
 .nav-links {
@@ -369,7 +171,7 @@
 
     align-items: center;
 
-    gap: 18px;
+    gap: 20px;
 
     white-space: nowrap;
 }
@@ -381,12 +183,11 @@
     color: #374151;
 
     font-size: 14px;
-
     font-weight: 500;
 
-    padding: 8px 4px;
+    padding: 9px 4px;
 
-    transition: 0.3s;
+    border-radius: 6px;
 }
 
 
@@ -395,8 +196,6 @@
 }
 
 
-/* NavLink Active */
-
 .nav-links a.active {
     color: #2563eb;
 
@@ -404,16 +203,16 @@
 }
 
 
-/* ==================================
-   LAPTOP / SMALL DESKTOP
-================================== */
+/* =========================
+   TABLET
+========================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
 
     .navbar {
         padding: 12px 3%;
 
-        gap: 15px;
+        gap: 14px;
     }
 
 
@@ -423,12 +222,12 @@
 
 
     .search-box {
-        max-width: 380px;
+        max-width: 360px;
     }
 
 
     .nav-links {
-        gap: 11px;
+        gap: 10px;
     }
 
 
@@ -438,55 +237,20 @@
 }
 
 
-/* ==================================
-   TABLET
-================================== */
-
-@media (max-width: 900px) {
-
-    .navbar {
-        flex-wrap: wrap;
-    }
-
-
-    .navbar h2 {
-        width: 100%;
-
-        text-align: center;
-
-        font-size: 22px;
-    }
-
-
-    .search-box {
-        flex: 1;
-
-        max-width: none;
-    }
-
-
-    .nav-links {
-        flex: 1;
-
-        justify-content: flex-end;
-    }
-}
-
-
-/* ==================================
+/* =========================
    MOBILE
-================================== */
+========================= */
 
 @media (max-width: 768px) {
 
     .navbar {
-        padding: 12px 15px;
-
         flex-direction: column;
 
         align-items: stretch;
 
         gap: 12px;
+
+        padding: 12px;
     }
 
 
@@ -511,28 +275,22 @@
 
 
     .search-box input {
-        height: 42px;
+        height: 43px;
 
-        font-size: 13px;
-
-        min-width: 0;
+        font-size: 14px;
     }
 
 
     .search-box button {
-        height: 42px;
+        height: 43px;
 
-        padding: 0 15px;
+        padding: 0 16px;
 
         font-size: 13px;
     }
 
 
-    /* Suggestions */
-
     .suggestions {
-        width: 100%;
-
         top: 46px;
     }
 
@@ -544,9 +302,11 @@
 
         display: grid;
 
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 5px;
+        gap: 7px;
+
+        white-space: normal;
     }
 
 
@@ -555,18 +315,15 @@
 
         text-align: center;
 
-        padding: 9px 3px;
+        padding: 11px 4px;
 
-        border-radius: 6px;
+        font-size: 13px;
 
-        font-size: 12px;
+        background: #f8fafc;
+
+        border: 1px solid #f1f5f9;
 
         box-sizing: border-box;
-    }
-
-
-    .nav-links a:hover {
-        background: #eff6ff;
     }
 
 
@@ -575,14 +332,15 @@
 
         color: #2563eb;
     }
+
 }
 
 
-/* ==================================
+/* =========================
    SMALL MOBILE
-================================== */
+========================= */
 
-@media (max-width: 520px) {
+@media (max-width: 480px) {
 
     .navbar {
         padding: 10px;
@@ -591,29 +349,6 @@
 
     .navbar h2 {
         font-size: 20px;
-    }
-
-
-    /*
-      5 links mobile me ek line me tight ho sakte hain.
-      Isliye 3 + 2 layout
-    */
-
-    .nav-links {
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 6px;
-    }
-
-
-    .nav-links a {
-        font-size: 12px;
-
-        padding: 9px 4px;
-
-        background: #f8fafc;
-
-        border: 1px solid #f1f5f9;
     }
 
 
@@ -626,23 +361,6 @@
 
     .search-box button {
         padding: 0 12px;
-    }
-}
-
-
-/* ==================================
-   VERY SMALL MOBILE
-================================== */
-
-@media (max-width: 360px) {
-
-    .navbar h2 {
-        font-size: 19px;
-    }
-
-
-    .search-box button {
-        padding: 0 9px;
 
         font-size: 12px;
     }
@@ -650,251 +368,33 @@
 
     .nav-links {
         grid-template-columns: repeat(2, 1fr);
+
+        gap: 6px;
     }
 
 
     .nav-links a {
         font-size: 12px;
 
-        padding: 9px 3px;
-    }
-}
-/* ============================
-   SECOND CATEGORY NAVBAR
-============================ */
-
-.category-navbar {
-    width: 100%;
-    min-height: 84px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 70px;
-
-    padding: 15px 30px;
-
-    background: #1f2d3d;
-
-    box-sizing: border-box;
-}
-
-
-.category-navbar span {
-    color: white;
-
-    font-size: 16px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    white-space: nowrap;
-
-    padding: 10px 12px;
-
-    border-radius: 6px;
-
-    transition: 0.3s;
-}
-
-
-.category-navbar span:hover {
-    background: #2f4053;
-
-    color: #f59e0b;
-}
-
-
-/* ============================
-   TABLET
-============================ */
-
-@media (max-width: 900px) {
-
-    .category-navbar {
-        gap: 25px;
-
-        padding: 14px 20px;
-    }
-
-
-    .category-navbar span {
-        font-size: 14px;
-    }
-}
-
-
-/* ============================
-   MOBILE
-============================ */
-
-@media (max-width: 600px) {
-
-    .category-navbar {
-        min-height: auto;
-
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 8px;
-
-        padding: 10px;
-    }
-
-
-    .category-navbar span {
-        width: 100%;
-
-        padding: 10px 5px;
-
-        text-align: center;
-
-        font-size: 13px;
-
-        background: rgba(255, 255, 255, 0.06);
-
-        box-sizing: border-box;
-    }
-}
-
-
-/* ============================
-   SMALL MOBILE
-============================ */
-
-@media (max-width: 360px) {
-
-    .category-navbar span {
-        font-size: 11px;
-
-        padding: 9px 3px;
-    }
-}
-/* =====================================
-   SECOND CATEGORY NAVBAR
-===================================== */
-
-.category-navbar {
-    width: 100%;
-
-    min-height: 70px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 65px;
-
-    padding: 12px 25px;
-
-    background: #1f2d3d;
-
-    box-sizing: border-box;
-}
-
-
-.category-navbar button {
-    border: none;
-
-    background: transparent;
-
-    color: #ffffff;
-
-    font-size: 16px;
-    font-weight: 500;
-
-    padding: 10px 15px;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    white-space: nowrap;
-
-    transition: 0.3s;
-}
-
-
-.category-navbar button:hover {
-    background: rgba(255, 255, 255, 0.12);
-
-    color: #ffa500;
-}
-
-
-/* ==========================
-   TABLET
-========================== */
-
-@media (max-width: 900px) {
-
-    .category-navbar {
-        gap: 20px;
-
-        padding: 12px 15px;
-    }
-
-
-    .category-navbar button {
-        font-size: 14px;
-
-        padding: 9px 10px;
-    }
-
-}
-
-
-/* ==========================
-   MOBILE
-========================== */
-
-@media (max-width: 600px) {
-
-    .category-navbar {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 8px;
-
-        padding: 10px;
-
-        min-height: auto;
-    }
-
-
-    .category-navbar button {
-        width: 100%;
-
-        padding: 11px 5px;
-
-        font-size: 13px;
-
-        background: rgba(255, 255, 255, 0.07);
-    }
-
-}
-
-
-/* ==========================
-   SMALL MOBILE
-========================== */
-
-@media (max-width: 360px) {
-
-    .category-navbar {
-        gap: 6px;
-
-        padding: 8px;
-    }
-
-
-    .category-navbar button {
-        font-size: 11px;
-
         padding: 10px 3px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .nav-links {
+        grid-template-columns: 1fr;
+    }
+
+
+    .search-box button {
+        padding: 0 9px;
     }
 
 }

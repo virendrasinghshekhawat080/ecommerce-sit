@@ -185,3 +185,21 @@
     color: #ff9900;
     margin: 5px 0;
 }
+/* HERO TEXT FIX */
+
+.hero {
+  color: white;
+}
+
+.hero h1 {
+  color: #ffffff !important;
+}
+
+.hero h2 {
+  color: #facc15 !important;
+}
+
+.hero button {
+  color: #111827;
+  background: #f59e0b;
+}

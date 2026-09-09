@@ -1,9 +1,139 @@
 
+// import { NavLink, useNavigate } from "react-router-dom";
+// import { useState } from "react";
+
+// import "./navbar.css";
+
+
+// function Navbar() {
+
+//     const [search, setSearch] = useState("");
+
+//     const navigate = useNavigate();
+
+
+    
+
+
+//     return (
+
+//         <nav className="navbar">
+
+
+//             {/* Logo */}
+
+//             <h2>
+//                 🛍️ MyStore
+//             </h2>
+
+
+
+//             {/* Search */}
+
+//             <div className="search-box">
+
+
+//                 <input
+
+//                     type="text"
+
+//                     placeholder="Search products..."
+
+//                     value={search}
+
+//                     onChange={(e) => setSearch(e.target.value)}
+
+//                 />
+
+
+//                 <button
+//                     onClick={() =>
+//                         navigate(`/products?search=${search}`)
+//                     }
+//                 >
+//                     Search
+//                 </button>
+
+
+
+//                 {
+//                     search && (
+
+//                         <div className="suggestions">
+
+
+//                             {
+//                                 filteredSuggestions.map(item => (
+
+//                                     <p
+//                                         key={item}
+//                                         onClick={() => selectSuggestion(item)}
+//                                     >
+//                                         {item}
+//                                     </p>
+
+//                                 ))
+//                             }
+
+
+//                         </div>
+
+//                     )
+//                 }
+
+
+//             </div>
+
+
+
+
+//             {/* Navigation */}
+
+//             <div className="nav-links">
+
+
+//                 <NavLink to="/">
+//                     Home
+//                 </NavLink>
+
+
+//                 <NavLink to="/products">
+//                     Products
+//                 </NavLink>
+
+
+//                 <NavLink to="/about">
+//                     About
+//                 </NavLink>
+
+//                 <NavLink to="/cart">
+//                     🛒 Cart
+//                 </NavLink>
+
+
+//                 <NavLink to="/my-orders">
+//                     📦 My Orders
+//                 </NavLink>
+
+
+//             </div>
+
+
+
+//         </nav>
+
+//     );
+
+// }
+
+
+// export default Navbar;
+
+
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import "./navbar.css";
-
 
 function Navbar() {
 
@@ -12,137 +142,127 @@ function Navbar() {
     const navigate = useNavigate();
 
 
-    //     const suggestions = [
-    //     "electronics",
-    //     "jewelery",
-    //     "men's clothing",
-    //     "women's clothing",
-    //     "men jacket",
-    //     "shirt"
-    // ];
-
-   
-    
-    // const filteredSuggestions = suggestions.filter(item =>
-    //     item.toLowerCase().includes(search.toLowerCase())
-    // );
+    const suggestions = [
+        "electronics",
+        "jewelery",
+        "men's clothing",
+        "women's clothing",
+        "men jacket",
+        "shirt"
+    ];
 
 
+    const filteredSuggestions = suggestions.filter((item) =>
+        item.toLowerCase().includes(search.toLowerCase())
+    );
 
-    // const selectSuggestion = (item) => {
 
-    //     setSearch(item);
+    const selectSuggestion = (item) => {
 
-    //     navigate(`/products?search=${item}`);
+        setSearch(item);
 
-    // };
+        navigate(
+            `/products?search=${encodeURIComponent(item)}`
+        );
 
+    };
+
+
+    const handleSearch = () => {
+
+        if (!search.trim()) return;
+
+        navigate(
+            `/products?search=${encodeURIComponent(search)}`
+        );
+
+    };
 
 
     return (
 
         <nav className="navbar">
 
-
             {/* Logo */}
 
-            <h2>
+            <h2 onClick={() => navigate("/")}>
                 🛍️ MyStore
             </h2>
-
 
 
             {/* Search */}
 
             <div className="search-box">
 
-
                 <input
-
                     type="text"
-
                     placeholder="Search products..."
-
                     value={search}
-
                     onChange={(e) => setSearch(e.target.value)}
-
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            handleSearch();
+                        }
+                    }}
                 />
 
 
-                <button
-                    onClick={() =>
-                        navigate(`/products?search=${search}`)
-                    }
-                >
+                <button onClick={handleSearch}>
                     Search
                 </button>
 
 
+                {search && (
 
-                {
-                    search && (
+                    <div className="suggestions">
 
-                        <div className="suggestions">
+                        {filteredSuggestions.map((item) => (
 
+                            <p
+                                key={item}
+                                onClick={() => selectSuggestion(item)}
+                            >
+                                {item}
+                            </p>
 
-                            {
-                                filteredSuggestions.map(item => (
+                        ))}
 
-                                    <p
-                                        key={item}
-                                        onClick={() => selectSuggestion(item)}
-                                    >
-                                        {item}
-                                    </p>
+                    </div>
 
-                                ))
-                            }
-
-
-                        </div>
-
-                    )
-                }
-
+                )}
 
             </div>
-
-
 
 
             {/* Navigation */}
 
             <div className="nav-links">
 
-
                 <NavLink to="/">
                     Home
                 </NavLink>
-
 
                 <NavLink to="/products">
                     Products
                 </NavLink>
 
-
                 <NavLink to="/about">
                     About
+                </NavLink>
+
+                <NavLink to="/contact">
+                   Contact
                 </NavLink>
 
                 <NavLink to="/cart">
                     🛒 Cart
                 </NavLink>
 
-
                 <NavLink to="/my-orders">
                     📦 My Orders
                 </NavLink>
 
-
             </div>
-
-
 
         </nav>
 
@@ -150,7 +270,4 @@ function Navbar() {
 
 }
 
-
 export default Navbar;
-
-

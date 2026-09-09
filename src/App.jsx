@@ -3,25 +3,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import CartProvider from "./context/CartContext";
 
-// Components
 import Navbar from "./Navbar";
 
 // Pages
-import ProductDetails from "./pages/ProductDetails";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
 import MyOrders from "./pages/MyOrders";
-import About from "./pages/About";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
 
-        {/* Main Navbar */}
+      <BrowserRouter basename="/ecommerce-sit">
+
         <Navbar />
 
         <Routes>
@@ -32,13 +32,19 @@ function App() {
           />
 
           <Route
+            path="/products"
+            element={<Products />}
+          />
+
+          <Route
             path="/about"
             element={<About />}
           />
 
+          {/* Contact */}
           <Route
-            path="/products"
-            element={<Products />}
+            path="/contact"
+            element={<Contact />}
           />
 
           <Route
@@ -69,6 +75,7 @@ function App() {
         </Routes>
 
       </BrowserRouter>
+
     </CartProvider>
   );
 }
