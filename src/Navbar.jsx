@@ -12,29 +12,30 @@ function Navbar() {
     const navigate = useNavigate();
 
 
-    const suggestions = [
-        "electronics",
-        "jewelery",
-        "men's clothing",
-        "women's clothing",
-        "men jacket",
-        "shirt"
-    ];
+    //     const suggestions = [
+    //     "electronics",
+    //     "jewelery",
+    //     "men's clothing",
+    //     "women's clothing",
+    //     "men jacket",
+    //     "shirt"
+    // ];
+
+   
+    
+    // const filteredSuggestions = suggestions.filter(item =>
+    //     item.toLowerCase().includes(search.toLowerCase())
+    // );
 
 
-    const filteredSuggestions = suggestions.filter(item =>
-        item.toLowerCase().includes(search.toLowerCase())
-    );
 
+    // const selectSuggestion = (item) => {
 
+    //     setSearch(item);
 
-    const selectSuggestion = (item) => {
+    //     navigate(`/products?search=${item}`);
 
-        setSearch(item);
-
-        navigate(`/products?search=${item}`);
-
-    };
+    // };
 
 
 
@@ -151,3 +152,5 @@ function Navbar() {
 
 
 export default Navbar;
+
+

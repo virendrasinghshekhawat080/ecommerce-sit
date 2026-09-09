@@ -12,25 +12,19 @@ function CategoryBar() {
     ];
 
     return (
+        <div className="shop-category-bar">
 
-        <div className="category-container">
-
-            {
-                categories.map((cat) => (
-
-                    <NavLink
-                        key={cat}
-                        to={`/products?category=${cat}`}
-                        className="category-link"
-                    >
-                        {cat}
-                    </NavLink>
-
-                ))
-            }
+            {categories.map((cat) => (
+                <NavLink
+                    key={cat}
+                    to={`/products?category=${encodeURIComponent(cat)}`}
+                    className="shop-category-link"
+                >
+                    {cat}
+                </NavLink>
+            ))}
 
         </div>
-
     );
 }
 

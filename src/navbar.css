@@ -180,3 +180,721 @@
     background: #eee;
 
 }
+/* =========================
+   NAVBAR MAIN
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 72px;
+
+    padding: 12px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar h2 {
+    margin: 0;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #111827;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    flex: 1;
+
+    max-width: 500px;
+
+    display: flex;
+
+    position: relative;
+}
+
+
+/* Search Input */
+
+.search-box input {
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-right: none;
+
+    border-radius: 8px 0 0 8px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+}
+
+
+.search-box input:focus {
+    border-color: #2563eb;
+}
+
+
+/* Search Button */
+
+.search-box button {
+    height: 44px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 0 8px 8px 0;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+}
+
+
+.search-box button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   SEARCH SUGGESTIONS
+========================= */
+
+.suggestions {
+    position: absolute;
+
+    top: 48px;
+    left: 0;
+
+    width: calc(100% - 85px);
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
+
+    z-index: 2000;
+}
+
+
+.suggestions p {
+    margin: 0;
+
+    padding: 11px 15px;
+
+    font-size: 14px;
+
+    color: #374151;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #f3f4f6;
+
+    transition: 0.2s;
+}
+
+
+.suggestions p:last-child {
+    border-bottom: none;
+}
+
+
+.suggestions p:hover {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    white-space: nowrap;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    padding: 8px 4px;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* NavLink Active */
+
+.nav-links a.active {
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+
+/* ==================================
+   LAPTOP / SMALL DESKTOP
+================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 12px 3%;
+
+        gap: 15px;
+    }
+
+
+    .navbar h2 {
+        font-size: 21px;
+    }
+
+
+    .search-box {
+        max-width: 380px;
+    }
+
+
+    .nav-links {
+        gap: 11px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+}
+
+
+/* ==================================
+   TABLET
+================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+
+    .navbar h2 {
+        width: 100%;
+
+        text-align: center;
+
+        font-size: 22px;
+    }
+
+
+    .search-box {
+        flex: 1;
+
+        max-width: none;
+    }
+
+
+    .nav-links {
+        flex: 1;
+
+        justify-content: flex-end;
+    }
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 12px 15px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+
+    /* Logo */
+
+    .navbar h2 {
+        width: 100%;
+
+        text-align: center;
+
+        font-size: 22px;
+    }
+
+
+    /* Search */
+
+    .search-box {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .search-box input {
+        height: 42px;
+
+        font-size: 13px;
+
+        min-width: 0;
+    }
+
+
+    .search-box button {
+        height: 42px;
+
+        padding: 0 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* Suggestions */
+
+    .suggestions {
+        width: 100%;
+
+        top: 46px;
+    }
+
+
+    /* Navigation */
+
+    .nav-links {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        gap: 5px;
+    }
+
+
+    .nav-links a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 9px 3px;
+
+        border-radius: 6px;
+
+        font-size: 12px;
+
+        box-sizing: border-box;
+    }
+
+
+    .nav-links a:hover {
+        background: #eff6ff;
+    }
+
+
+    .nav-links a.active {
+        background: #eff6ff;
+
+        color: #2563eb;
+    }
+}
+
+
+/* ==================================
+   SMALL MOBILE
+================================== */
+
+@media (max-width: 520px) {
+
+    .navbar {
+        padding: 10px;
+    }
+
+
+    .navbar h2 {
+        font-size: 20px;
+    }
+
+
+    /*
+      5 links mobile me ek line me tight ho sakte hain.
+      Isliye 3 + 2 layout
+    */
+
+    .nav-links {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 6px;
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
+
+        padding: 9px 4px;
+
+        background: #f8fafc;
+
+        border: 1px solid #f1f5f9;
+    }
+
+
+    .search-box input {
+        font-size: 13px;
+
+        padding: 0 10px;
+    }
+
+
+    .search-box button {
+        padding: 0 12px;
+    }
+}
+
+
+/* ==================================
+   VERY SMALL MOBILE
+================================== */
+
+@media (max-width: 360px) {
+
+    .navbar h2 {
+        font-size: 19px;
+    }
+
+
+    .search-box button {
+        padding: 0 9px;
+
+        font-size: 12px;
+    }
+
+
+    .nav-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
+
+        padding: 9px 3px;
+    }
+}
+/* ============================
+   SECOND CATEGORY NAVBAR
+============================ */
+
+.category-navbar {
+    width: 100%;
+    min-height: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    padding: 15px 30px;
+
+    background: #1f2d3d;
+
+    box-sizing: border-box;
+}
+
+
+.category-navbar span {
+    color: white;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    padding: 10px 12px;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+
+.category-navbar span:hover {
+    background: #2f4053;
+
+    color: #f59e0b;
+}
+
+
+/* ============================
+   TABLET
+============================ */
+
+@media (max-width: 900px) {
+
+    .category-navbar {
+        gap: 25px;
+
+        padding: 14px 20px;
+    }
+
+
+    .category-navbar span {
+        font-size: 14px;
+    }
+}
+
+
+/* ============================
+   MOBILE
+============================ */
+
+@media (max-width: 600px) {
+
+    .category-navbar {
+        min-height: auto;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+
+        padding: 10px;
+    }
+
+
+    .category-navbar span {
+        width: 100%;
+
+        padding: 10px 5px;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        background: rgba(255, 255, 255, 0.06);
+
+        box-sizing: border-box;
+    }
+}
+
+
+/* ============================
+   SMALL MOBILE
+============================ */
+
+@media (max-width: 360px) {
+
+    .category-navbar span {
+        font-size: 11px;
+
+        padding: 9px 3px;
+    }
+}
+/* =====================================
+   SECOND CATEGORY NAVBAR
+===================================== */
+
+.category-navbar {
+    width: 100%;
+
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 65px;
+
+    padding: 12px 25px;
+
+    background: #1f2d3d;
+
+    box-sizing: border-box;
+}
+
+
+.category-navbar button {
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+
+.category-navbar button:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #ffa500;
+}
+
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 900px) {
+
+    .category-navbar {
+        gap: 20px;
+
+        padding: 12px 15px;
+    }
+
+
+    .category-navbar button {
+        font-size: 14px;
+
+        padding: 9px 10px;
+    }
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+    .category-navbar {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+
+        padding: 10px;
+
+        min-height: auto;
+    }
+
+
+    .category-navbar button {
+        width: 100%;
+
+        padding: 11px 5px;
+
+        font-size: 13px;
+
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+}
+
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width: 360px) {
+
+    .category-navbar {
+        gap: 6px;
+
+        padding: 8px;
+    }
+
+
+    .category-navbar button {
+        font-size: 11px;
+
+        padding: 10px 3px;
+    }
+
+}
